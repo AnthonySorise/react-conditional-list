@@ -1,0 +1,20 @@
+.addItem, .addItem input{
+    font-size: 0.9vmax;
+}
+.addItem .addText{
+    display:block;
+    color: #0095ff;
+} 
+.addItem input:first-of-type{
+    width: 20vmax;
+    height: 1.25vmax;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.addItem input:last-of-type{
+    border-radius: 5px;
+    margin-left: 5px;
+    background: rgba(0, 149, 255, 0.15);
+	cursor: pointer;
+}

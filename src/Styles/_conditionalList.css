@@ -1,0 +1,9 @@
+.conditionalList {
+    margin: auto;
+}
+.conditionalList h1{
+    font-size: 1.75vmax;
+} 
+.conditionalList table{
+    border-collapse: collapse;
+}
