@@ -14,21 +14,21 @@ const AddItem = props => {
         let newItem = {text: text, dateTime: getDateString()};
         props.handleAddItem(newItem);
         setText("");
-        document.getElementById("toDoInput").focus();
+        document.getElementById("ifItem03").focus();
     }
 
     return (
         <div className="addItem">
             <ul>
-                <li>
+                <li>IF
                     <form onSubmit={handleSubmit}>
                         <input
-                            id="toDoInput"
+                            id="ifItem03"
                             type="text"
                             value={text}
                             onChange={e => setText(e.target.value)}
                         />
-                        <input type="submit" value="+" />
+                        <input class="addItemBtn" type="submit" value="+" />
                     </form>    
                 </li>
             </ul>

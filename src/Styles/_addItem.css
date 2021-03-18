@@ -5,14 +5,18 @@
     display:block;
     color: #0095ff;
 } 
-.addItem input:first-of-type{
+.addItem form{
+    display:inline-block;
+    margin-left:12px;
+}
+.addItem #ifItem03{
     width: 20vmax;
     height: 1.25vmax;
     padding-left: 10px;
     border-radius: 5px;
     margin-top: 5px;
 }
-.addItem input:last-of-type{
+.addItemBtn{
     border-radius: 5px;
     margin-left: 5px;
     background: rgba(0, 149, 255, 0.15);
