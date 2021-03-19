@@ -43,7 +43,7 @@ const ConditionalList = props => {
             <table>
                 <tbody>
                 {listItems.map((item, i) =>
-                    <ListItem key = {i} index = {i} text={item.text} dateTime={item.dateTime} handleRemoveItem={handleRemoveItem}/>
+                    <ListItem key = {i} index = {i} text={item.text} dateTime={item.dateTime} ifItem01={item.ifItem01} ifItemOperator={item.ifItemOperator} ifItem02={item.ifItem02} handleRemoveItem={handleRemoveItem}/>
                 )}
                 </tbody>
             </table>

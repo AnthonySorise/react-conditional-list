@@ -9,12 +9,27 @@
     display:inline-block;
     margin-left:12px;
 }
-.addItem #ifItem03{
+.addItemLi{
+    list-style:none;
+}
+.addItem #ifItem02{
     width: 20vmax;
     height: 1.25vmax;
     padding-left: 10px;
     border-radius: 5px;
     margin-top: 5px;
+}
+.addItem #ifItemOperator{
+    margin-left:6px;
+    margin-right:6px;
+}
+.addItem select{
+    width: 20vmax;
+    height: 1.75vmax;
+    padding-left: 10px;
+    border-radius: 5px;
+    position:relative;
+    top:2px;
 }
 .addItemBtn{
     border-radius: 5px;
