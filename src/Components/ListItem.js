@@ -9,10 +9,10 @@ const ListItem = props => {
                 <ul><li></li></ul>
             </td>
             <td>
-                {props.text}
+                {props.dateTime}
             </td>
             <td>
-                {props.dateTime}
+                {props.text}
             </td>
             <td>
                 <div onClick={()=>{props.handleRemoveItem(props.index)}}>[<span className="closeText">Remove</span>]</div>

@@ -4,6 +4,10 @@ import '../Styles/_addItem.css'
 const AddItem = props => {
     const [text, setText] = useState("");
 
+    const [text_ifItem01, setText_ifItem01] = useState("");
+    const [text_ifItemOperator, setText_ifItemOperator] = useState("");
+    const [text_ifItem02, setText_ifItem02] = useState("");
+
     const getDateString = () => {
         let date = new Date();
         return date.toLocaleString();
@@ -14,6 +18,9 @@ const AddItem = props => {
         let newItem = {text: text, dateTime: getDateString(), ifItem01: document.getElementById('ifItem01').value, ifItemOperator: document.getElementById('ifItemOperator').value, ifItem02: document.getElementById('ifItem02').value};
         props.handleAddItem(newItem);
         setText("");
+        setText_ifItem01("");
+        setText_ifItemOperator("");
+        setText_ifItem02("");
     }
 
     const concatenateValues = () => {
@@ -143,7 +150,7 @@ const AddItem = props => {
                             type="text"
                             onChange={e => setText(concatenateValues())}
                         />
-                        <input class="addItemBtn" type="submit" value="+" />
+                        <input className="addItemBtn" type="submit" value="+" />
                     </form>    
                 </li>
             </ul>
