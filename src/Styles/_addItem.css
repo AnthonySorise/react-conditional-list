@@ -5,9 +5,13 @@
     display:block;
     color: #0095ff;
 } 
+.addItemLi-ifText{
+    display:inline-block;
+}
 .addItem form{
     display:inline-block;
     margin-left:12px;
+    width:90%;
 }
 .addItemLi{
     list-style:none;

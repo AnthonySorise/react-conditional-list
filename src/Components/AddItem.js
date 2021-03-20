@@ -4,9 +4,9 @@ import '../Styles/_addItem.css'
 const AddItem = props => {
     const [text, setText] = useState("");
 
-    const [text_ifItem01, setText_ifItem01] = useState("");
-    const [text_ifItemOperator, setText_ifItemOperator] = useState("");
-    const [text_ifItem02, setText_ifItem02] = useState("");
+    // const [text_ifItem01, setText_ifItem01] = useState("");
+    // const [text_ifItemOperator, setText_ifItemOperator] = useState("");
+    // const [text_ifItem02, setText_ifItem02] = useState("");
 
     const getDateString = () => {
         let date = new Date();
@@ -18,9 +18,9 @@ const AddItem = props => {
         let newItem = {text: text, dateTime: getDateString(), ifItem01: document.getElementById('ifItem01').value, ifItemOperator: document.getElementById('ifItemOperator').value, ifItem02: document.getElementById('ifItem02').value};
         props.handleAddItem(newItem);
         setText("");
-        setText_ifItem01("");
-        setText_ifItemOperator("");
-        setText_ifItem02("");
+        // setText_ifItem01("");
+        // setText_ifItemOperator("");
+        // setText_ifItem02("");
     }
 
     const concatenateValues = () => {
@@ -34,7 +34,8 @@ const AddItem = props => {
     return (
         <div className="addItem">
             <ul>
-                <li className="addItemLi">If
+                <li className="addItemLi">
+                    <h2 className="addItemLi-ifText">If</h2>
                     <form onSubmit={handleSubmit}>
                         <select id="ifItem01" name="ifItem01" onChange={e => setText(concatenateValues())}>
                             <option value=""></option>

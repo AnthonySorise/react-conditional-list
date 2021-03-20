@@ -1,9 +1,13 @@
 .conditionalList {
     margin: auto;
+    width:90vw;
 }
 .conditionalList h1{
     font-size: 1.75vmax;
 } 
 .conditionalList table{
     border-collapse: collapse;
+}
+table{
+    width:90vw;
 }
