@@ -40,13 +40,11 @@ const ConditionalList = props => {
         <div className="conditionalList">
             <MessageBanner text={messageText.current}></MessageBanner>
             <h1>Conditional List</h1>
-            <table>
-                <tbody>
+            <div>
                 {listItems.map((item, i) =>
                     <ListItem key = {i} index = {i} text={item.text} dateTime={item.dateTime} ifItem01={item.ifItem01} ifItemOperator={item.ifItemOperator} ifItem02={item.ifItem02} handleRemoveItem={handleRemoveItem}/>
                 )}
-                </tbody>
-            </table>
+            </div>
             <AddItem handleAddItem = {handleAddItem}></AddItem>
         </div>
     );

@@ -4,20 +4,20 @@ import '../Styles/_listItem.css'
 const ListItem = props => {
 
     return (
-        <tr className="listItem" if-item-01={props.ifItem01} if-item-operator={props.ifItemOperator} if-item-02={props.ifItem02}>
-            <td>
+        <div className="listItem" if-item-01={props.ifItem01} if-item-operator={props.ifItemOperator} if-item-02={props.ifItem02}>
+            <div>
                 <ul><li></li></ul>
-            </td>
-            <td>
+            </div>
+            <div>
                 {props.dateTime}
-            </td>
-            <td>
+            </div>
+            <div>
                 {props.text}
-            </td>
-            <td>
+            </div>
+            <div>
                 <div onClick={()=>{props.handleRemoveItem(props.index)}}>[<span className="closeText">Remove</span>]</div>
-            </td>
-        </tr>
+            </div>
+        </div>
     );
 }
 export default ListItem;

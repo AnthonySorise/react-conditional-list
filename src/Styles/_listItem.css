@@ -1,27 +1,28 @@
 .listItem {
+    display:flex;
+    flex-flow: row;
+    align-items: center;
     font-size: 0.9vmax;
-    line-height: 0.18vmax;
+    border-bottom:1px solid lightgray;
 }
-.listItem td{
+.listItem div{
     padding-right: 20px;
-    border-bottom: 1px solid lightgray;
-    height: 1vmax;
 }
-.listItem td:first-of-type{
+.listItem div:first-of-type{
     border-bottom: none;
 }
-.listItem td:nth-of-type(2){
+.listItem div:nth-of-type(2){
     max-width: 70vmax;
     overflow-wrap: break-word;
 }
-.listItem td:nth-of-type(3){
+.listItem div:nth-of-type(3){
     font-weight: bold;
 }
-.listItem td:nth-of-type(4){
+.listItem div:nth-of-type(4){
     cursor: pointer;
     user-select: none;
 }
-.listItem td:nth-of-type(4) .closeText{
+.listItem div:nth-of-type(4) .closeText{
     color:#0095ff;
     font-weight: bold;
 }
