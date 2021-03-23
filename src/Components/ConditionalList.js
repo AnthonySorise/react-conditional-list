@@ -25,15 +25,19 @@ const ConditionalList = props => {
         localStorage.setItem("listItems", JSON.stringify(newListItems));
     }
     const handleRemoveItem = (index) => {
-        messageText.current = "Conditional Removed!";
-        let newListItems = [];
-        for(let i = 0; i < listItems.length; i++){
-            if(i != index){
-                newListItems.push(listItems[i]);
+        if (window.confirm('Are you sure you want to delete this conditional?')) {
+            messageText.current = "Conditional Removed!";
+            let newListItems = [];
+            for(let i = 0; i < listItems.length; i++){
+                if(i != index){
+                    newListItems.push(listItems[i]);
+                }
             }
-        }
-        setListItems(newListItems);
-        localStorage.setItem("listItems", JSON.stringify(newListItems));
+            setListItems(newListItems);
+            localStorage.setItem("listItems", JSON.stringify(newListItems));
+          } else {
+            console.log('Delete Cancelled');
+          }
     }
 
     return (
