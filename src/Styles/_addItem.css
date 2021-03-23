@@ -32,6 +32,7 @@
     margin-left:8.6vmax;
     margin-right:8.6vmax;
     font-size: 1.25vmax;
+    color:blue;
 }
 .addItem #ifItem02, .addItem #thenItem02{
     border:3px solid green;
