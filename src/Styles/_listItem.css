@@ -26,3 +26,15 @@
     color:#0095ff;
     font-weight: bold;
 }
+.listItem-text-if{
+    font-size: 1.5vmax;
+}
+.listItem-text-ifItem01{
+    color:orange;
+}
+.listItem-text-ifItemOperator{
+    color:blue;
+}
+.listItem-text-ifItem02{
+    color:green;
+}

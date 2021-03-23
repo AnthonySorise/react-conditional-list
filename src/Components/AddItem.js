@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import '../Styles/_addItem.css'
 
 const AddItem = props => {
-    const [text, setText] = useState("");
-
-    // const [text_ifItem01, setText_ifItem01] = useState("");
-    // const [text_ifItemOperator, setText_ifItemOperator] = useState("");
-    // const [text_ifItem02, setText_ifItem02] = useState("");
+    const [text_ifItem01, setText_ifItem01] = useState("");
+    const [text_ifItemOperator, setText_ifItemOperator] = useState("");
+    const [text_ifItem02, setText_ifItem02] = useState("");
 
     const getDateString = () => {
         let date = new Date();
@@ -15,20 +13,22 @@ const AddItem = props => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let newItem = {text: text, dateTime: getDateString(), ifItem01: document.getElementById('ifItem01').value, ifItemOperator: document.getElementById('ifItemOperator').value, ifItem02: document.getElementById('ifItem02').value};
+        let newItem = {text_ifItem01: text_ifItem01, text_ifItemOperator: text_ifItemOperator, text_ifItem02: text_ifItem02, dateTime: getDateString(), ifItem01: document.getElementById('ifItem01').value, ifItemOperator: document.getElementById('ifItemOperator').value, ifItem02: document.getElementById('ifItem02').value};
         props.handleAddItem(newItem);
-        setText("");
-        // setText_ifItem01("");
-        // setText_ifItemOperator("");
-        // setText_ifItem02("");
+
+        setText_ifItem01("");
+        setText_ifItemOperator("");
+        setText_ifItem02("");
     }
 
-    const concatenateValues = () => {
+    const updateValues = () => {
         let ifItem01 = document.getElementById('ifItem01');
         let ifItemOperator = document.getElementById('ifItemOperator');
         let ifItem02 = document.getElementById('ifItem02');
 
-        return "if " + ifItem01.value + " " + ifItemOperator.options[ifItemOperator.selectedIndex].text + " " + ifItem02.value;
+        setText_ifItem01(ifItem01.value);
+        setText_ifItemOperator(ifItemOperator.options[ifItemOperator.selectedIndex].text);
+        setText_ifItem02(ifItem02.value);
     }
 
     return (
@@ -37,7 +37,7 @@ const AddItem = props => {
                 <li className="addItemLi">
                     <h2 className="addItemLi-ifText">If</h2>
                     <form onSubmit={handleSubmit}>
-                        <select id="ifItem01" name="ifItem01" onChange={e => setText(concatenateValues())}>
+                        <select id="ifItem01" name="ifItem01" onChange={e => updateValues()}>
                             <option value=""></option>
                             <option value="carfaxoneowner">carfaxoneowner</option>
                             <option value="comment1">comment1</option>
@@ -131,7 +131,7 @@ const AddItem = props => {
                             <option value="vin">vin</option>
                             <option value="year">year</option>
                         </select>
-                        <select id="ifItemOperator" name="ifItemOperator" onChange={e => setText(concatenateValues())}>
+                        <select id="ifItemOperator" name="ifItemOperator" onChange={e => updateValues()}>
                             <option value=""></option>
                             <option value="equals">equals</option>
                             <option value="does_not_equal">does not equal</option>
@@ -149,7 +149,7 @@ const AddItem = props => {
                         <input
                             id="ifItem02"
                             type="text"
-                            onChange={e => setText(concatenateValues())}
+                            onChange={e => updateValues()}
                         />
                         <input className="addItemBtn" type="submit" value="+" />
                     </form>    
