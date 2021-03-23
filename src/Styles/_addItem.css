@@ -4,8 +4,11 @@
 .addItem .addText{
     display:block;
     color: #0095ff;
-} 
+}
 .addItemLi-ifText{
+    width:3.25vmax;
+} 
+.addItemLi-ifText, .addItemLi-thenText{
     display:inline-block;
 }
 .addItem form{
@@ -16,7 +19,7 @@
 .addItemLi{
     list-style:none;
 }
-.addItem #ifItem01{
+.addItem #ifItem01, .addItem #thenItem01{
     border:3px solid orange;
 }
 .addItem #ifItemOperator{
@@ -24,7 +27,13 @@
     margin-left:6px;
     margin-right:6px;
 }
-.addItem #ifItem02{
+.addItem #thenItemOperator{
+    text-align: center;
+    margin-left:8.6vmax;
+    margin-right:8.6vmax;
+    font-size: 1.25vmax;
+}
+.addItem #ifItem02, .addItem #thenItem02{
     border:3px solid green;
     width: 20vmax;
     height: 1.25vmax;

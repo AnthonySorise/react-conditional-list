@@ -18,23 +18,26 @@
 .listItem div:nth-of-type(3){
     font-weight: bold;
 }
-.listItem div:nth-of-type(4){
+.listItem .removeListItem-btn{
     cursor: pointer;
     user-select: none;
 }
-.listItem div:nth-of-type(4) .closeText{
+.listItem .removeListItem-btn .closeText{
     color:#0095ff;
     font-weight: bold;
 }
-.listItem-text-if{
-    font-size: 1.5vmax;
+.listItem-ifContainer{
+    width:100%
 }
-.listItem-text-ifItem01{
+.listItem-text-if, .listItem-text-then{
+    font-size: 1.25vmax;
+}
+.listItem-text-ifItem01, .listItem-text-thenItem01{
     color:orange;
 }
-.listItem-text-ifItemOperator{
+.listItem-text-ifItemOperator, .listItem-text-thenItemOperator{
     color:blue;
 }
-.listItem-text-ifItem02{
+.listItem-text-ifItem02, .listItem-text-thenItem02{
     color:green;
 }

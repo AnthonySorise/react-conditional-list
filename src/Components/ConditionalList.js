@@ -42,7 +42,20 @@ const ConditionalList = props => {
             <h1>Conditional List</h1>
             <div>
                 {listItems.map((item, i) =>
-                    <ListItem key = {i} index = {i} text_ifItem01={item.text_ifItem01} text_ifItemOperator={item.text_ifItemOperator} text_ifItem02={item.text_ifItem02} dateTime={item.dateTime} ifItem01={item.ifItem01} ifItemOperator={item.ifItemOperator} ifItem02={item.ifItem02} handleRemoveItem={handleRemoveItem}/>
+                    <ListItem   key = {i} 
+                                index = {i} 
+                                text_ifItem01={item.text_ifItem01} 
+                                text_ifItemOperator={item.text_ifItemOperator} 
+                                text_ifItem02={item.text_ifItem02}
+                                text_thenItem01={item.text_thenItem01} 
+                                text_thenItem02={item.text_thenItem02} 
+                                dateTime={item.dateTime} 
+                                ifItem01={item.ifItem01} 
+                                ifItemOperator={item.ifItemOperator} 
+                                ifItem02={item.ifItem02} 
+                                thenItem01={item.thenItem01} 
+                                thenItem02={item.thenItem02} 
+                                handleRemoveItem={handleRemoveItem}/>
                 )}
             </div>
             <AddItem handleAddItem = {handleAddItem}></AddItem>
