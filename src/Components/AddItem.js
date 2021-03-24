@@ -15,18 +15,32 @@ const AddItem = props => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let newItem = { text_ifItem01: text_ifItem01, 
-                        text_ifItemOperator: text_ifItemOperator, 
-                        text_ifItem02: text_ifItem02,
-                        text_thenItem01: text_thenItem01, 
-                        text_thenItem02: text_thenItem02, 
-                        dateTime: getDateString(), 
-                        ifItem01: document.getElementById('ifItem01').value, 
-                        ifItemOperator: document.getElementById('ifItemOperator').value, 
-                        ifItem02: document.getElementById('ifItem02').value,
-                        thenItem01: document.getElementById('thenItem01').value, 
-                        thenItemOperator: document.getElementById('thenItemOperator').value, 
-                        thenItem02: document.getElementById('thenItem02').value};
+        let newItem = { text:{
+                            ifs:[[{
+                                text_ifItem01: text_ifItem01, 
+                                text_ifItemOperator: text_ifItemOperator, 
+                                text_ifItem02: text_ifItem02,
+                            }]],
+                            then:{
+                                text_thenItem01: text_thenItem01, 
+                                text_thenItem02: text_thenItem02 
+                            }
+                        },
+                        data:{
+                            dateTime: getDateString(), 
+                            ifs:[[{
+                                ifItem01: document.getElementById('ifItem01').value, 
+                                ifItemOperator: document.getElementById('ifItemOperator').value, 
+                                ifItem02: document.getElementById('ifItem02').value
+                            }]],
+                            then:{
+                                thenItem01: document.getElementById('thenItem01').value, 
+                                thenItemOperator: document.getElementById('thenItemOperator').value, 
+                                thenItem02: document.getElementById('thenItem02').value
+                            }
+                        }
+                    };
+
         props.handleAddItem(newItem);
 
         setText_ifItem01("");

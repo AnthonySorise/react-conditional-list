@@ -10,11 +10,12 @@ const ConditionalList = props => {
 
     useEffect(() => {
         if(localStorage.getItem("listItems")){
-            setListItems(JSON.parse(localStorage.getItem("listItems")));
+             setListItems(JSON.parse(localStorage.getItem("listItems")));
         }
     }, []);
 
     const handleAddItem = (newItem) => {
+        console.log(listItems);
         messageText.current = "Conditional Added!";
         let newListItems = [];
         for(let i = 0; i < listItems.length; i++){
@@ -48,17 +49,17 @@ const ConditionalList = props => {
                 {listItems.map((item, i) =>
                     <ListItem   key = {i} 
                                 index = {i} 
-                                text_ifItem01={item.text_ifItem01} 
-                                text_ifItemOperator={item.text_ifItemOperator} 
-                                text_ifItem02={item.text_ifItem02}
-                                text_thenItem01={item.text_thenItem01} 
-                                text_thenItem02={item.text_thenItem02} 
-                                dateTime={item.dateTime} 
-                                ifItem01={item.ifItem01} 
-                                ifItemOperator={item.ifItemOperator} 
-                                ifItem02={item.ifItem02} 
-                                thenItem01={item.thenItem01} 
-                                thenItem02={item.thenItem02} 
+                                text_ifItem01={item.text.ifs[0][0].text_ifItem01} 
+                                text_ifItemOperator={item.text.ifs[0][0].text_ifItemOperator} 
+                                text_ifItem02={item.text.ifs[0][0].text_ifItem02}
+                                text_thenItem01={item.text.then.text_thenItem01} 
+                                text_thenItem02={item.text.then.text_thenItem02} 
+                                dateTime={item.data.dateTime} 
+                                ifItem01={item.data.ifs[0][0].ifItem01} 
+                                ifItemOperator={item.data.ifs[0][0].ifItemOperator} 
+                                ifItem02={item.data.ifs[0][0].ifItem02} 
+                                thenItem01={item.data.then.thenItem01} 
+                                thenItem02={item.data.then.thenItem02} 
                                 handleRemoveItem={handleRemoveItem}/>
                 )}
             </div>
