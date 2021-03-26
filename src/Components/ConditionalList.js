@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import MessageBanner from './MessageBanner'
-import ListItem from './ListItem'
+import ListItems from './ListItems'
 import AddItem from './AddItem'
 import '../Styles/_conditionalList.css'
 
@@ -15,7 +15,6 @@ const ConditionalList = props => {
     }, []);
 
     const handleAddItem = (newItem) => {
-        console.log(listItems);
         messageText.current = "Conditional Added!";
         let newListItems = [];
         for(let i = 0; i < listItems.length; i++){
@@ -46,22 +45,9 @@ const ConditionalList = props => {
             <MessageBanner text={messageText.current}></MessageBanner>
             <h1>Conditional List</h1>
             <div>
-                {listItems.map((item, i) =>
-                    <ListItem   key = {i} 
-                                index = {i} 
-                                text_ifItem01={item.text.ifs[0][0].text_ifItem01} 
-                                text_ifItemOperator={item.text.ifs[0][0].text_ifItemOperator} 
-                                text_ifItem02={item.text.ifs[0][0].text_ifItem02}
-                                text_thenItem01={item.text.then.text_thenItem01} 
-                                text_thenItem02={item.text.then.text_thenItem02} 
-                                dateTime={item.data.dateTime} 
-                                ifItem01={item.data.ifs[0][0].ifItem01} 
-                                ifItemOperator={item.data.ifs[0][0].ifItemOperator} 
-                                ifItem02={item.data.ifs[0][0].ifItem02} 
-                                thenItem01={item.data.then.thenItem01} 
-                                thenItem02={item.data.then.thenItem02} 
-                                handleRemoveItem={handleRemoveItem}/>
-                )}
+                <ListItems
+                    listItems ={listItems} 
+                    handleRemoveItem={handleRemoveItem}/>
             </div>
             <AddItem handleAddItem = {handleAddItem}></AddItem>
         </div>
