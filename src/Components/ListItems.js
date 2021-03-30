@@ -11,8 +11,6 @@ const ListItems = props => {
             {props.listItems.map((item, i)=>
 
             <div className="listItem" key={i}>
-                {console.log("List Item: ")}
-                {console.log(item)}
                 <div>
                     <ul><li></li></ul>
                 </div>
@@ -21,12 +19,39 @@ const ListItems = props => {
                 </div>
                 <div>
                     <div className="listItem-ifContainer">
-                        <div>
-                            <span className='listItem-text-if'>If </span>
-                            <span className='listItem-text-ifItem01'>{item.text.ifs[0][0].text_ifItem01} </span>
-                            <span className='listItem-text-ifItemOperator'>{item.text.ifs[0][0].text_ifItemOperator} </span>
-                            <span className='listItem-text-ifItem02'>{item.text.ifs[0][0].text_ifItem02} </span>
+                        {item.text.ifs.map((ifsAndCollection, j)=>
+                        <div className="ifs-andCollectionContainer" key={j}>
+
+                            {j == 0 ? (
+                                <div></div>
+                            ) : (
+                                <div>AND</div>
+                            )}
+
+                            <div className="ifs-andCollection">
+                                {item.text.ifs.map((ifsOrCollection, k)=>
+                                <div className="ifs-orCollectionContainer" key={k}>
+
+                                    {j == 0 ? (
+                                        <div></div>
+                                    ) : (
+                                        <div>OR</div>
+                                    )}
+
+                                    <div className="ifs-orCollection">
+                                        <div>
+                                            <span className='listItem-text-if'>If </span>
+                                            <span className='listItem-text-ifItem01'>{item.text.ifs[j][k].text_ifItem01} </span>
+                                            <span className='listItem-text-ifItemOperator'>{item.text.ifs[j][k].text_ifItemOperator} </span>
+                                            <span className='listItem-text-ifItem02'>{item.text.ifs[j][k].text_ifItem02} </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                )}
+                            </div>
                         </div>
+
+                        )}
                     </div>
                     <div className="listItem-thenContainer">
                         <div>
