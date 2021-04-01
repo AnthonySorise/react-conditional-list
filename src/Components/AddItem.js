@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import AddItem_If from './AddItem_If';
+import AddItem_If_AndGroup from './AddItem_If_AndGroup';
 import '../Styles/_addItem.css'
 
 const AddItem = props => {
@@ -98,14 +98,14 @@ const AddItem = props => {
             <ul>
                 
                 {Array.from(Array(num_ifAnds + 1), (e, i) => {
-                    return <AddItem_If key={i} addIndex={i} addIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If>
+                    return <AddItem_If_AndGroup key={i} addIndex={i} addIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If_AndGroup>
                     
                 })}          
 
                 <div className="addAndContainer">
                     <button onClick={addAnd}>Add And</button>
                 </div>
-                <div className="addAndContainer">
+                <div className="resetAddContainer">
                     <button onClick={resetAnds}>Reset</button>
                 </div>
 

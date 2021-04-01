@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-// import '../Styles/_addItem_if.css'
+// import '../Styles/_AddItem_If_AndGroup.css'
 
-const AddItem_If = props => {
+const AddItem_If_AndGroup = props => {
     const [num_ifOrs, setnum_ifOrs] = useState(0);
 
     const addOr = () => {
@@ -31,7 +31,7 @@ const AddItem_If = props => {
     }
 
     return (
-        <li className="addItemLi addItem_if">
+        <li className="addItemLi AddItem_If_AndGroup">
             {props.addIndex == 0 ? (
                 <div></div>
             ) : (
@@ -173,4 +173,4 @@ const AddItem_If = props => {
         </li> 
     );
 }
-export default AddItem_If;
+export default AddItem_If_AndGroup;
