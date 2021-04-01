@@ -22,6 +22,7 @@ const ConditionalList = props => {
         }
         newListItems.push(newItem);
         setListItems(newListItems);
+        //console.log(newListItems);
         localStorage.setItem("listItems", JSON.stringify(newListItems));
     }
     const handleRemoveItem = (index) => {

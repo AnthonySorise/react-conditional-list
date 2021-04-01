@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AddItem_If from './AddItem_If';
 import '../Styles/_addItem.css'
 
 const AddItem = props => {
+    const [num_ifAnds, setnum_ifAnds] = useState(1);
+
     const [text_ifItem01, setText_ifItem01] = useState("");
     const [text_ifItemOperator, setText_ifItemOperator] = useState("");
     const [text_ifItem02, setText_ifItem02] = useState("");
@@ -13,6 +15,10 @@ const AddItem = props => {
     const [data_ifItem02, setData_ifItem02] = useState("");
     const [data_thenItem01, setData_thenItem01] = useState("");
     const [data_thenItem02, setData_thenItem02] = useState("");
+
+    useEffect(() => {
+        console.log("addItem useeffect")
+    }, [num_ifAnds]);
 
     const getDateString = () => {
         let date = new Date();
@@ -68,6 +74,13 @@ const AddItem = props => {
         setData_thenItem02("");
     }
 
+    const addAnd = () => {
+        setnum_ifAnds(num_ifAnds + 1);
+    }
+    const resetAnds = () => {
+        setnum_ifAnds(1);
+    }
+
     const updateValues = () => {
 
         let thenItem01 = document.getElementById('thenItem01');
@@ -83,8 +96,18 @@ const AddItem = props => {
     return (
         <div className="addItem">
             <ul>
+                
+                {Array.from(Array(num_ifAnds), (e, i) => {
+                    return <AddItem_If key={i} index={i} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If>
+                    
+                })}          
 
-                <AddItem_If passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If>
+                <div className="addAndContainer">
+                    <button onClick={addAnd}>Add And</button>
+                </div>
+                <div className="addAndContainer">
+                    <button onClick={resetAnds}>Reset</button>
+                </div>
 
                 <li className="addItemLi">
                     <h2 className="addItemLi-thenText">Then</h2>

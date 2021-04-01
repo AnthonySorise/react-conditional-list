@@ -22,6 +22,12 @@ const AddItem_If = props => {
 
     return (
         <li className="addItemLi addItem_if">
+            {props.index == 0 ? (
+                <div></div>
+            ) : (
+                <div>AND</div>
+            )}
+
             <h2 className="addItemLi-ifText">If</h2>
             <form onSubmit={props.handleSubmit}>
                 <select id="ifItem01" name="ifItem01" onChange={e => updateValues()}>
