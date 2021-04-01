@@ -37,8 +37,12 @@ const AddItem_If_AndGroup = props => {
             ) : (
                 <div>AND</div>
             )}
-
-            <h2 className="addItemLi-ifText">If</h2>
+            {props.addIndex == 0 ? (
+                <h2 className="addItemLi-ifText">If</h2>
+            ) : (
+                <h2 className="addItemLi-ifText invisible">If</h2>
+            )}
+            
             <form onSubmit={props.handleSubmit}>
                 <select id="ifItem01" name="ifItem01" onChange={e => updateValues()}>
                     <option value=""></option>

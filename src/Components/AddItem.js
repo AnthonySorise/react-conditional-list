@@ -99,8 +99,7 @@ const AddItem = props => {
                 
                 {Array.from(Array(num_ifAnds + 1), (e, i) => {
                     return <AddItem_If_AndGroup key={i} addIndex={i} addIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If_AndGroup>
-                    
-                })}          
+                })}
 
                 <div className="addAndContainer">
                     <button onClick={addAnd}>Add And</button>

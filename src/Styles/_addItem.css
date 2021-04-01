@@ -5,6 +5,9 @@
     display:block;
     color: #0095ff;
 }
+.invisible{
+    visibility:hidden;
+}
 .addItemLi-ifText{
     width:3.25vmax;
 } 
