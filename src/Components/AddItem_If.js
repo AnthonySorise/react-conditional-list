@@ -2,8 +2,18 @@ import React, { useState } from 'react';
 // import '../Styles/_addItem_if.css'
 
 const AddItem_If = props => {
+    const [num_ifOrs, setnum_ifOrs] = useState(0);
+
+    const addOr = () => {
+        setnum_ifOrs(num_ifOrs + 1);
+    }
+    const resetOrs = () => {
+        setnum_ifOrs(0);
+    }
 
     const updateValues = () => {
+        
+
         let ifItem01 = document.getElementById('ifItem01');
         let ifItemOperator = document.getElementById('ifItemOperator');
         let ifItem02 = document.getElementById('ifItem02');
@@ -22,7 +32,7 @@ const AddItem_If = props => {
 
     return (
         <li className="addItemLi addItem_if">
-            {props.index == 0 ? (
+            {props.addIndex == 0 ? (
                 <div></div>
             ) : (
                 <div>AND</div>
@@ -144,7 +154,22 @@ const AddItem_If = props => {
                     type="text"
                     onChange={e => updateValues()}
                 />
-            </form>    
+                
+            </form>
+
+            {props.addIndex != props.addIndexMax ? (
+                <div></div>
+            ) : (
+                <div className="addOrButtonGroup">
+                    <div className="addOrContainer">
+                        <button>Add Or</button>
+                    </div>
+                    <div className="resetOrContainer">
+                        <button>Reset</button>
+                    </div>
+                </div>
+            )}
+
         </li> 
     );
 }

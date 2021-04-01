@@ -3,7 +3,7 @@ import AddItem_If from './AddItem_If';
 import '../Styles/_addItem.css'
 
 const AddItem = props => {
-    const [num_ifAnds, setnum_ifAnds] = useState(1);
+    const [num_ifAnds, setnum_ifAnds] = useState(0);
 
     const [text_ifItem01, setText_ifItem01] = useState("");
     const [text_ifItemOperator, setText_ifItemOperator] = useState("");
@@ -78,7 +78,7 @@ const AddItem = props => {
         setnum_ifAnds(num_ifAnds + 1);
     }
     const resetAnds = () => {
-        setnum_ifAnds(1);
+        setnum_ifAnds(0);
     }
 
     const updateValues = () => {
@@ -97,8 +97,8 @@ const AddItem = props => {
         <div className="addItem">
             <ul>
                 
-                {Array.from(Array(num_ifAnds), (e, i) => {
-                    return <AddItem_If key={i} index={i} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If>
+                {Array.from(Array(num_ifAnds + 1), (e, i) => {
+                    return <AddItem_If key={i} addIndex={i} addIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If>
                     
                 })}          
 

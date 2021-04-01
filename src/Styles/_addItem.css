@@ -14,7 +14,7 @@
 .addItem form{
     display:inline-block;
     margin-left:12px;
-    width:90%;
+    width:75%;
 }
 .addItemLi{
     list-style:none;
@@ -60,4 +60,7 @@
 }
 .addAndContainer{
     width:100%;
+}
+.addOrButtonGroup{
+    display:inline-block;
 }
