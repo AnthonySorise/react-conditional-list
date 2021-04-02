@@ -17,8 +17,8 @@ const AddItem = props => {
     const [data_thenItem02, setData_thenItem02] = useState("");
 
     useEffect(() => {
-        console.log("addItem useeffect")
-    }, [num_ifAnds]);
+
+    }, []);
 
     const getDateString = () => {
         let date = new Date();
