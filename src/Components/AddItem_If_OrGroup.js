@@ -23,6 +23,20 @@ const AddItem_If_OrGroup = props => {
 
     return (
         <form onSubmit={props.handleSubmit}>
+
+            {props.orIndex == 0 ? (
+                <div className="add-or-text"></div>
+            ) : (
+                <div className="add-or-text">OR</div>
+            )}
+
+            {props.orIndex == 0 ? (
+                <div></div>
+            ) : (
+                <div className="or-spacer"></div>
+            )}
+
+
             <select id="ifItem01" name="ifItem01" onChange={e => updateValues()}>
                 <option value=""></option>
                 <option value="carfaxoneowner">carfaxoneowner</option>

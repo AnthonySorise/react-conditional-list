@@ -14,10 +14,17 @@
 .addItemLi-ifText, .addItemLi-thenText{
     display:inline-block;
 }
+.add-or-text{
+    margin-top:12px;
+}
+.or-spacer{
+    display:inline-block;
+    width:3.25vmax;
+}
 .addItem form{
     display:inline-block;
     margin-left:12px;
-    width:75%;
+    width:85%;
 }
 .addItemLi{
     list-style:none;
@@ -66,4 +73,10 @@
 }
 .addOrButtonGroup{
     display:inline-block;
+}
+.addItem_if_andGroup{
+    background-color: lightblue;
+}
+.addItem_then{
+    background-color: lightgreen;
 }

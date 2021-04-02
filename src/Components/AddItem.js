@@ -96,7 +96,7 @@ const AddItem = props => {
     return (
         <div className="addItem">
             <ul>
-                
+
                 {Array.from(Array(num_ifAnds + 1), (e, i) => {
                     return <AddItem_If_AndGroup key={i} addIndex={i} addIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If_AndGroup>
                 })}
@@ -108,7 +108,7 @@ const AddItem = props => {
                     <button onClick={resetAnds}>Reset</button>
                 </div>
 
-                <li className="addItemLi">
+                <li className="addItemLi addItem_then">
                     <h2 className="addItemLi-thenText">Then</h2>
                     <form onSubmit={handleSubmit}>
                         <select id="thenItem01" name="thenItem01" onChange={e => updateValues()}>

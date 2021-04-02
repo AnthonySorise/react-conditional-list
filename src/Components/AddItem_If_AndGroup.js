@@ -13,33 +13,34 @@ const AddItem_If_AndGroup = props => {
     }
 
     return (
-        <li className="addItemLi AddItem_If_AndGroup">
+        <li className="addItemLi addItem_if_andGroup">
             {props.addIndex == 0 ? (
-                <div></div>
+                <div className="add-or-text"></div>
             ) : (
-                <div>AND</div>
+                <div className="add-or-text">AND</div>
             )}
             {props.addIndex == 0 ? (
                 <h2 className="addItemLi-ifText">If</h2>
             ) : (
                 <h2 className="addItemLi-ifText invisible">If</h2>
             )}
-            
-            <AddItem_If_OrGroup handleSubmit={props.handleSubmit} passIfVals={props.passIfVals}></AddItem_If_OrGroup>
+
+            {Array.from(Array(num_ifOrs + 1), (e, i) => {
+                return <AddItem_If_OrGroup key={i} orIndex={i} orIndexMax={num_ifOrs} passIfVals={props.passIfVals} handleSubmit={props.handleSubmit}></AddItem_If_OrGroup>
+            })}
 
             {props.addIndex != props.addIndexMax ? (
                 <div></div>
             ) : (
                 <div className="addOrButtonGroup">
                     <div className="addOrContainer">
-                        <button>Add Or</button>
+                        <button onClick={addOr}>Add Or</button>
                     </div>
                     <div className="resetOrContainer">
-                        <button>Reset</button>
+                        <button onClick={resetOrs}>Reset</button>
                     </div>
                 </div>
             )}
-
         </li> 
     );
 }
