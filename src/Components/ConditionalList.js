@@ -22,8 +22,8 @@ const ConditionalList = props => {
         }
         newListItems.push(newItem);
         setListItems(newListItems);
-        //console.log(newListItems);
         localStorage.setItem("listItems", JSON.stringify(newListItems));
+        setListItems(JSON.parse(localStorage.getItem("listItems")));
     }
     const handleRemoveItem = (index) => {
         if (window.confirm('Are you sure you want to delete this conditional?')) {
