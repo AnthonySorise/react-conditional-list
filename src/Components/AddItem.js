@@ -55,7 +55,6 @@ const AddItem = props => {
         newItem.data.ifs[andIndex][orIndex].data_ifItem01 = ifObject.data_ifItem01;
         newItem.data.ifs[andIndex][orIndex].data_ifItemOperator = ifObject.data_ifItemOperator;
         newItem.data.ifs[andIndex][orIndex].data_ifItem02 = ifObject.data_ifItem02;
-        setAddItemObject(newItem);
     }
 
     const updateThenVals = () => {
@@ -68,8 +67,6 @@ const AddItem = props => {
         newItem.data.then.thenItem01 = thenItem01.value;
         newItem.data.then.thenItem02 = thenItem02.value;
         setAddItemObject(newItem);
-        // console.log("!!!!");
-        // console.log(newItem);
     }
 
     const handleSubmit = (e) => {
@@ -78,6 +75,8 @@ const AddItem = props => {
         props.handleAddItem(addItemObject);
 
         //TO DO clear all vals
+
+        setAddItemObject(addItemObject);
     }
 
     const addAnd = () => {

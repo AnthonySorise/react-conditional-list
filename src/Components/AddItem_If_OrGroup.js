@@ -5,9 +5,9 @@ const AddItem_If_OrGroup = props => {
 
     const updateValues = () => {
         
-        let ifItem01 = document.getElementById('ifItem01');
-        let ifItemOperator = document.getElementById('ifItemOperator');
-        let ifItem02 = document.getElementById('ifItem02');
+        let ifItem01 = document.getElementById('ifItem01_' + props.andIndex + "_" + props.orIndex);
+        let ifItemOperator = document.getElementById('ifItemOperator_' + props.andIndex + "_" + props.orIndex);
+        let ifItem02 = document.getElementById('ifItem02_' + props.andIndex + "_" + props.orIndex);
 
         let ifObject = {
             text_ifItem01:ifItem01.value,
@@ -36,7 +36,7 @@ const AddItem_If_OrGroup = props => {
             )}
 
 
-            <select id="ifItem01" name="ifItem01" onChange={e => updateValues()}>
+            <select id={"ifItem01_" + props.andIndex + "_" + props.orIndex} name="ifItem01" onChange={e => updateValues()}>
                 <option value=""></option>
                 <option value="carfaxoneowner">carfaxoneowner</option>
                 <option value="comment1">comment1</option>
@@ -130,7 +130,7 @@ const AddItem_If_OrGroup = props => {
                 <option value="vin">vin</option>
                 <option value="year">year</option>
             </select>
-            <select id="ifItemOperator" name="ifItemOperator" onChange={e => updateValues()}>
+            <select id={"ifItemOperator_" + props.andIndex + "_" + props.orIndex} name="ifItemOperator" onChange={e => updateValues()}>
                 <option value=""></option>
                 <option value="equals">equals</option>
                 <option value="does_not_equal">does not equal</option>
@@ -146,7 +146,7 @@ const AddItem_If_OrGroup = props => {
                 <option value="does_not_end_with">doesn't end with</option>
             </select>
             <input
-                id="ifItem02"
+                id={"ifItem02_" + props.andIndex + "_" + props.orIndex}
                 type="text"
                 onChange={e => updateValues()}
             />
