@@ -29,10 +29,10 @@ const ListItems = props => {
                             )}
 
                             <div className="ifs-andCollection">
-                                {item.text.ifs.map((ifsOrCollection, k)=>
+                                {item.text.ifs[j].map((ifsOrCollection, k)=>
                                 <div className="ifs-orCollectionContainer" key={k}>
 
-                                    {j == 0 ? (
+                                    {k == 0 ? (
                                         <div></div>
                                     ) : (
                                         <div>OR</div>

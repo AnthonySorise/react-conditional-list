@@ -14,12 +14,12 @@ const AddItem_If_AndGroup = props => {
 
     return (
         <li className="addItemLi addItem_if_andGroup">
-            {props.addIndex == 0 ? (
+            {props.andIndex == 0 ? (
                 <div className="add-or-text"></div>
             ) : (
                 <div className="add-or-text">AND</div>
             )}
-            {props.addIndex == 0 ? (
+            {props.andIndex == 0 ? (
                 <h2 className="addItemLi-ifText">If</h2>
             ) : (
                 <h2 className="addItemLi-ifText invisible">If</h2>
