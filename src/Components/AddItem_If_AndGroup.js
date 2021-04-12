@@ -26,10 +26,10 @@ const AddItem_If_AndGroup = props => {
             )}
 
             {Array.from(Array(num_ifOrs + 1), (e, i) => {
-                return <AddItem_If_OrGroup key={i} orIndex={i} orIndexMax={num_ifOrs} passIfVals={props.passIfVals} handleSubmit={props.handleSubmit}></AddItem_If_OrGroup>
+                return <AddItem_If_OrGroup key={i} andIndex ={props.andIndex} orIndex={i} orIndexMax={num_ifOrs} passIfVals={props.passIfVals} handleSubmit={props.handleSubmit}></AddItem_If_OrGroup>
             })}
 
-            {props.addIndex != props.addIndexMax ? (
+            {props.andIndex != props.andIndexMax ? (
                 <div></div>
             ) : (
                 <div className="addOrButtonGroup">

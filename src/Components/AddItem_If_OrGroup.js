@@ -17,8 +17,7 @@ const AddItem_If_OrGroup = props => {
             data_ifItemOperator:ifItemOperator.value,
             data_ifItem02:ifItem02.value
         }
-
-        props.passIfVals(ifObject);
+        props.passIfVals(ifObject, props.andIndex, props.orIndex);
     }
 
     return (
