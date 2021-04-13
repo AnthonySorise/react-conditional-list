@@ -9,7 +9,8 @@ const AddItem = props => {
 
     useEffect(() => {
         let newItem = 
-        { text:{
+        { 
+            text:{
                 ifs:[[{}]],
                 then:{
                     text_thenItem01: "", 
@@ -75,8 +76,36 @@ const AddItem = props => {
         props.handleAddItem(addItemObject);
 
         //TO DO clear all vals
+        let selects = document.querySelectorAll("select");
+        for(var i = 0; i < selects.length; i++){
+            selects[i].value = "";
+        }
+        let textInputs = document.querySelectorAll("input[type='text']");
+        for(var i = 0; i < textInputs.length; i++){
+            textInputs[i].value = "";
+        }
 
-        setAddItemObject(addItemObject);
+        setnum_ifAnds(0);
+
+        let newItem = 
+        { 
+            text:{
+                ifs:[[{}]],
+                then:{
+                    text_thenItem01: "", 
+                    text_thenItem02: "" 
+                }
+            },
+            data:{
+                dateTime: "", 
+                ifs:[[{}]],
+                then:{
+                    thenItem01: "", 
+                    thenItem02: ""
+                }
+            }
+        };
+        setAddItemObject(newItem);
     }
 
     const addAnd = () => {
