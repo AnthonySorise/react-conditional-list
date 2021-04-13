@@ -36,7 +36,7 @@ const AddItem_If_OrGroup = props => {
             )}
 
 
-            <select id={"ifItem01_" + props.andIndex + "_" + props.orIndex} name="ifItem01" onChange={e => updateValues()}>
+            <select id={"ifItem01_" + props.andIndex + "_" + props.orIndex} className="ifItem01" name="ifItem01" onChange={e => updateValues()}>
                 <option value=""></option>
                 <option value="carfaxoneowner">carfaxoneowner</option>
                 <option value="comment1">comment1</option>
@@ -130,7 +130,7 @@ const AddItem_If_OrGroup = props => {
                 <option value="vin">vin</option>
                 <option value="year">year</option>
             </select>
-            <select id={"ifItemOperator_" + props.andIndex + "_" + props.orIndex} name="ifItemOperator" onChange={e => updateValues()}>
+            <select id={"ifItemOperator_" + props.andIndex + "_" + props.orIndex} className="ifItemOperator" name="ifItemOperator" onChange={e => updateValues()}>
                 <option value=""></option>
                 <option value="equals">equals</option>
                 <option value="does_not_equal">does not equal</option>

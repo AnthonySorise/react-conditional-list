@@ -4,7 +4,7 @@ import '../Styles/_listItems.css'
 const ListItems = props => {
     
     useEffect(() => {
-
+        console.log(props.listItems);
     }, []);
     return (
         <div className="listItemContainer">

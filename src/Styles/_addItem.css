@@ -29,10 +29,10 @@
 .addItemLi{
     list-style:none;
 }
-.addItem #ifItem01, .addItem #thenItem01{
+.addItem .ifItem01, .addItem #thenItem01{
     border:3px solid orange;
 }
-.addItem #ifItemOperator{
+.addItem .ifItemOperator{
     border:3px solid blue;
     margin-left:6px;
     margin-right:6px;

@@ -10,7 +10,7 @@ const ConditionalList = props => {
 
     useEffect(() => {
         if(localStorage.getItem("listItems")){
-             setListItems(JSON.parse(localStorage.getItem("listItems")));
+            setListItems(JSON.parse(localStorage.getItem("listItems")));
         }
     }, []);
 
