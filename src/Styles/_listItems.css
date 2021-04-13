@@ -5,17 +5,17 @@
     font-size: 0.9vmax;
     border-bottom:1px solid lightgray;
 }
-.listItem div{
+.listItem>div{
     padding-right: 20px;
 }
-.listItem div:first-of-type{
+.listItem>div:first-of-type{
     border-bottom: none;
 }
-.listItem div:nth-of-type(2){
+.listItem>div:nth-of-type(2){
     max-width: 70vmax;
     overflow-wrap: break-word;
 }
-.listItem div:nth-of-type(3){
+.listItem>div:nth-of-type(3){
     font-weight: bold;
 }
 .listItem .removeListItem-btn{
@@ -25,6 +25,9 @@
 .listItem .removeListItem-btn .closeText{
     color:#0095ff;
     font-weight: bold;
+}
+.listItem-container{
+    width: 70vw;
 }
 .listItem-ifContainer{
     width:100%
@@ -40,4 +43,12 @@
 }
 .listItem-text-ifItem02, .listItem-text-thenItem02{
     color:green;
+}
+.ifs-andCollection{
+    background-color: lightblue;
+    width:100%
+}
+.listItem-thenContainer{
+    background-color: lightgreen;
+    width:100%;
 }

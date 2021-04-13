@@ -17,7 +17,7 @@ const ListItems = props => {
                 <div>
                     {item.data.dateTime}
                 </div>
-                <div>
+                <div className="listItem-container">
                     <div className="listItem-ifContainer">
                         {item.text.ifs.map((ifsAndCollection, j)=>
                         <div className="ifs-andCollectionContainer" key={j}>
