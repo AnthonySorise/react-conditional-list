@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AddItem_If_OrGroup from './AddItem_If_OrGroup';
 // import '../Styles/_AddItem_If_AndGroup.css'
 
-const AddItem_If_AndGroup = props => {
+const AddItem_If_AndGroup = (props) => {
     const [num_ifOrs, setnum_ifOrs] = useState(0);
+
+    useEffect(() => {
+        resetOrs();
+    }, [props.resetOrs]);
 
     const addOr = () => {
         setnum_ifOrs(num_ifOrs + 1);

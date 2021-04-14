@@ -4,8 +4,8 @@ import '../Styles/_addItem.css'
 
 const AddItem = props => {
     const [num_ifAnds, setnum_ifAnds] = useState(0);
-
     const [addItemObject, setAddItemObject] = useState({});
+    const [resetOrs, setResetOrs] = useState(0); 
 
     useEffect(() => {
         let newItem = 
@@ -85,7 +85,8 @@ const AddItem = props => {
             textInputs[i].value = "";
         }
 
-        setnum_ifAnds(0);
+        resetAnds();
+        setResetOrs(prev => prev + 1)
 
         let newItem = 
         { 
@@ -120,7 +121,7 @@ const AddItem = props => {
             <ul>
 
                 {Array.from(Array(num_ifAnds + 1), (e, i) => {
-                    return <AddItem_If_AndGroup key={i} andIndex={i} andIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit}></AddItem_If_AndGroup>
+                    return <AddItem_If_AndGroup key={i} andIndex={i} andIndexMax={num_ifAnds} passIfVals={passIfVals} handleSubmit={handleSubmit} resetOrs={resetOrs}></AddItem_If_AndGroup>
                 })}
 
                 <div className="addAndContainer">
