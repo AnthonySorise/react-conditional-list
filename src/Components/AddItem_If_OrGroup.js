@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import '../Styles/_AddItem_If_OrGroup.css'
 
 const AddItem_If_OrGroup = props => {
@@ -23,13 +23,13 @@ const AddItem_If_OrGroup = props => {
     return (
         <form onSubmit={props.handleSubmit}>
 
-            {props.orIndex == 0 ? (
+            {props.orIndex === 0 ? (
                 <div className="add-or-text"></div>
             ) : (
                 <div className="add-or-text">OR</div>
             )}
 
-            {props.orIndex == 0 ? (
+            {props.orIndex === 0 ? (
                 <div></div>
             ) : (
                 <div className="or-spacer"></div>

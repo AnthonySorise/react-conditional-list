@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddItem_If_OrGroup from './AddItem_If_OrGroup';
 // import '../Styles/_AddItem_If_AndGroup.css'
 
@@ -18,12 +18,12 @@ const AddItem_If_AndGroup = (props) => {
 
     return (
         <li className="addItemLi addItem_if_andGroup">
-            {props.andIndex == 0 ? (
+            {props.andIndex === 0 ? (
                 <div className="add-or-text"></div>
             ) : (
                 <div className="add-or-text">AND</div>
             )}
-            {props.andIndex == 0 ? (
+            {props.andIndex === 0 ? (
                 <h2 className="addItemLi-ifText">If</h2>
             ) : (
                 <h2 className="addItemLi-ifText invisible">If</h2>
@@ -33,7 +33,7 @@ const AddItem_If_AndGroup = (props) => {
                 return <AddItem_If_OrGroup key={i} andIndex ={props.andIndex} orIndex={i} orIndexMax={num_ifOrs} passIfVals={props.passIfVals} handleSubmit={props.handleSubmit}></AddItem_If_OrGroup>
             })}
 
-            {props.andIndex != props.andIndexMax ? (
+            {props.andIndex !== props.andIndexMax ? (
                 <div></div>
             ) : (
                 <div className="addOrButtonGroup">

@@ -11,6 +11,7 @@ const ConditionalList = props => {
     useEffect(() => {
         if(localStorage.getItem("listItems")){
             setListItems(JSON.parse(localStorage.getItem("listItems")));
+            console.log(JSON.parse(localStorage.getItem("listItems")))
         }
     }, []);
 
@@ -30,7 +31,7 @@ const ConditionalList = props => {
             messageText.current = "Conditional Removed!";
             let newListItems = [];
             for(let i = 0; i < listItems.length; i++){
-                if(i != index){
+                if(i !== index){
                     newListItems.push(listItems[i]);
                 }
             }

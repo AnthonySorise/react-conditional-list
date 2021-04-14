@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddItem_If_AndGroup from './AddItem_If_AndGroup';
 import '../Styles/_addItem.css'
 
@@ -77,12 +77,12 @@ const AddItem = props => {
 
         //TO DO clear all vals
         let selects = document.querySelectorAll("select");
-        for(var i = 0; i < selects.length; i++){
-            selects[i].value = "";
+        for(var iSelect = 0; iSelect < selects.length; iSelect++){
+            selects[iSelect].value = "";
         }
         let textInputs = document.querySelectorAll("input[type='text']");
-        for(var i = 0; i < textInputs.length; i++){
-            textInputs[i].value = "";
+        for(var iTextInput = 0; iTextInput < textInputs.length; iTextInput++){
+            textInputs[iTextInput].value = "";
         }
 
         resetAnds();

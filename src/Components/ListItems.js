@@ -1,11 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import '../Styles/_listItems.css'
 
 const ListItems = props => {
-    
-    useEffect(() => {
-        console.log(props.listItems);
-    }, []);
     return (
         <div className="listItemContainer">
             {props.listItems.map((item, i)=>
@@ -22,7 +18,7 @@ const ListItems = props => {
                         {item.text.ifs.map((ifsAndCollection, j)=>
                         <div className="ifs-andCollectionContainer" key={j}>
 
-                            {j == 0 ? (
+                            {j === 0 ? (
                                 <div></div>
                             ) : (
                                 <div>AND</div>
@@ -32,7 +28,7 @@ const ListItems = props => {
                                 {item.text.ifs[j].map((ifsOrCollection, k)=>
                                 <div className="ifs-orCollectionContainer" key={k}>
 
-                                    {k == 0 ? (
+                                    {k === 0 ? (
                                         <div></div>
                                     ) : (
                                         <div>OR</div>
