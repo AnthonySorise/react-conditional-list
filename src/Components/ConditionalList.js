@@ -49,7 +49,7 @@ const ConditionalList = props => {
                 newList.push(undefined);
             }
         }
-        newList.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
+        newList.splice(newIndex, 0, newList.splice(oldIndex, 1)[0]);
         setListItems(newList);
     }
     const handleMoveListItemUp = (index) =>{
@@ -72,7 +72,10 @@ const ConditionalList = props => {
             <div>
                 <ListItems
                     listItems ={listItems} 
-                    handleRemoveItem={handleRemoveItem}/>
+                    handleRemoveItem={handleRemoveItem}
+                    handleMoveListItemUp={handleMoveListItemUp}
+                    handleMoveListItemDown={handleMoveListItemDown}
+                />
             </div>
             <AddItem handleAddItem = {handleAddItem}></AddItem>
         </div>

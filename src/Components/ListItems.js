@@ -62,6 +62,10 @@ const ListItems = props => {
                 <div className="removeListItem-btn">
                     <div onClick={()=>{props.handleRemoveItem(i)}}>[<span className="closeText">Remove</span>]</div>
                 </div>
+                <div>
+                    <div onClick={()=>{props.handleMoveListItemUp(i)}}>[<span className="closeText">Up</span>]</div>
+                    <div onClick={()=>{props.handleMoveListItemDown(i)}}>[<span className="closeText">Down</span>]</div>
+                </div>
             </div>
             )}
         </div>
