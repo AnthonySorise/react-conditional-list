@@ -41,6 +41,29 @@ const ConditionalList = props => {
             console.log('Delete Cancelled');
           }
     }
+    const moveListItem = (oldIndex, newIndex) =>{
+        let newList = listItems;
+        if (newIndex >= newList.length) {
+            var k = newIndex - newList.length + 1;
+            while (k--) {
+                newList.push(undefined);
+            }
+        }
+        newList.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
+        setListItems(newList);
+    }
+    const handleMoveListItemUp = (index) =>{
+        if (index == listItems.length-1){
+            return
+        }
+        moveListItem(index, index + 1);
+    }
+    const handleMoveListItemDown = (index) =>{
+        if (index == 0){
+            return
+        }
+        moveListItem(index, index - 1);
+    }
 
     return (
         <div className="conditionalList">
