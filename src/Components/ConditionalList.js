@@ -17,26 +17,26 @@ const ConditionalList = props => {
 
     const handleAddItem = (newItem) => {
         messageText.current = "Conditional Added!";
-        let newListItems = [];
+        let newList = [];
         for(let i = 0; i < listItems.length; i++){
-            newListItems.push(listItems[i]);
+            newList.push(listItems[i]);
         }
-        newListItems.push(newItem);
-        setListItems(newListItems);
-        localStorage.setItem("listItems", JSON.stringify(newListItems));
+        newList.push(newItem);
+        setListItems(newList);
+        localStorage.setItem("listItems", JSON.stringify(newList));
         setListItems(JSON.parse(localStorage.getItem("listItems")));
     }
     const handleRemoveItem = (index) => {
         if (window.confirm('Are you sure you want to delete this conditional?')) {
             messageText.current = "Conditional Removed!";
-            let newListItems = [];
+            let newList = [];
             for(let i = 0; i < listItems.length; i++){
                 if(i !== index){
-                    newListItems.push(listItems[i]);
+                    newList.push(listItems[i]);
                 }
             }
-            setListItems(newListItems);
-            localStorage.setItem("listItems", JSON.stringify(newListItems));
+            setListItems(newList);
+            localStorage.setItem("listItems", JSON.stringify(newList));
           } else {
             console.log('Delete Cancelled');
           }
@@ -49,8 +49,9 @@ const ConditionalList = props => {
                 newList.push(undefined);
             }
         }
-        newList.splice(newIndex, 0, newList.splice(oldIndex, 1)[0]);
+        newList = newList.splice(newIndex, 0, newList.splice(oldIndex, 1)[0]);
         setListItems(newList);
+        localStorage.setItem("listItems", JSON.stringify(newList));
     }
     const handleMoveListItemUp = (index) =>{
         if (index == listItems.length-1){
